@@ -1,0 +1,307 @@
+body {
+    position: relative;
+    font-size: 62.5%;
+    color: #222;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+ul {
+    list-style: none;
+}
+.flex {
+    display: flex;
+}
+.flex.-alicenter {
+    align-items: center;
+}
+.flex.-culumn {
+    flex-direction: column;
+}
+.flex.-flex_end {
+    justify-content: flex-end;
+}
+.btn {
+    border-bottom: 5px solid #b84c00;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+.btn.-orange{
+    color: #fff;
+    background-color: #eb6100;
+}
+
+.btn:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #f56500;
+    border-bottom: 2px solid #b84c00;
+}
+.wrp {
+    position: relative;
+}
+.ly_main {
+    max-width: 100%;
+    padding: 10px 20px;
+}
+.ly_block1 {
+    margin-top: 25px;
+}
+.ly_block2 {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #222;
+}
+.ly_block1 .bl_h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+.ly_block2 .bl_h2 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+
+.ly_form_area {
+    margin-top: 30px;
+}
+.ly_form_area img {
+    width: calc(100%/14);
+}
+
+.ly_question {
+    padding: 25px 0 30px 0;
+    background-color: green;
+}
+
+.terms_list {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 1.5rem;
+}
+.terms_list .item {
+    width: calc(100%/5);
+    text-align: center;
+}
+.terms-dora {
+    display: inline-flex;
+    align-items: center;
+}
+.terms-dora.-border {
+    border: 3px solid #fff;
+}
+.terms-dora span {
+    font-size: 1.1rem;
+    color:#fff;
+}
+.terms-dora div {
+    margin-left: 15px;
+}
+.terms-dora img {
+    width: 25px;
+}
+.terms-dora.reach img {
+    width: 50%;
+}
+
+.ly_image_area {
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.ly_image_area img {
+    display: inline-block;
+}
+
+.ly_naki_area {
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.ly_answer_area {
+    margin-top: 15px;
+}
+
+.select_box {
+    position: relative;
+    margin-right: 15px;
+}
+
+.select_box::after {
+    position: absolute;
+    top: 45%;
+    right: 1.4em;
+    transform: translate(50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: '';
+}
+
+.select_box select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 230px;
+    height: 2.8em;
+    padding: .4em 3.6em .4em .8em;
+    border: 2px solid #2589d0;
+    border-radius: 3px;
+    color: #333333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.select_box select:focus {
+    outline: 1px solid #2589d0;
+}
+
+.ly_answer_area .btn {
+    padding: 15px 25px;
+}
+
+.btn-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 25px auto 0;
+    padding: .9em 2em;
+    border: 1px solid #2589d0;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #2589d0;
+    font-size: 1em;
+}
+
+.btn-modal:hover {
+    border: none;
+    background-color: #2589d0;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* モーダル */
+.modal_outer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    z-index: 10;
+    transition: display .5s ease;
+}
+.modal_outer.is-show {
+    display: block;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    overflow-x: scroll;
+    z-index: 11;
+    background: #fff;
+    /* display: none; */
+}
+.modal .modal_inner {
+    position: relative;
+    background: #fff;
+}
+ .close_btn {
+    /* display: none; */
+    position: absolute;
+    top: 23%;
+    right: 4%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    z-index: 11;
+}
+ .close_btn::before,
+ .close_btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 40px;
+    background: #fff;
+    border-radius: 2.5px;
+}
+ .close_btn::before {
+    transform: translate(-50%,-50%) rotate(30deg);
+}
+
+ .close_btn::after {
+    transform: translate(-50%,-50%) rotate(-30deg);
+
+}
+
+.modal .modal_inner .modal_contents {
+    padding: 10px 15px;
+}
+
+.modal .modal_inner .modal_contents p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* 計算表 */
+.table {
+    display: none;
+    width: 100%;
+    margin-top: 25px;
+    font-size: 1.2rem;
+}
+.table.is-show {
+    display: block;
+}
+
+.table th, .table td {
+    padding: 5px;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 符 */
+.fu_table {
+    display: none;
+    height: 500px;
+    overflow-y: scroll;
+}
+.fu_table.is-show {
+    display: block;
+}
+.fu_table section:first-of-type {
+    margin-top: 15px;
+}
+.fu_table section{
+    margin-top: 45px;
+}
+.fu_table h3 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.fu_list {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+.fu_list .item {
+    align-items: center;
+    margin-top: 10px;
+}
+
+.fu_list .item p {
+    margin-right: 10px;
+}
