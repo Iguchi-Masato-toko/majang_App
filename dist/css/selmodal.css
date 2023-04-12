@@ -1,0 +1,185 @@
+body.selModalBody {
+  overflow: hidden;
+}
+
+.selModal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  display: none;
+}
+
+.selModalOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 50%);
+}
+
+.selModal .selModalInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 95%;
+  max-width: 600px;
+  max-height: 95%;
+  overflow-y: hidden;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  transform: translate(-50%, -50%);
+}
+
+.selModal .selModalInner .selModalHeader {
+  padding: 10px;
+  text-align: right;
+  background-color: #efefef;
+  border-radius: 5px 5px 0 0;
+}
+
+.selModal .selModalInner .selModalHeader::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.selModalCloseIcon {
+  position: relative;
+  display: block;
+  float: right;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.selModalCloseIcon span::before,
+.selModalCloseIcon span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 84%;
+  height: 10%;
+  margin: -8% 0 0 -42%;
+  content: "";
+  background: #555;
+}
+
+.selModalCloseIcon span::before {
+  transform: rotate(-45deg);
+}
+
+.selModalCloseIcon span::after {
+  transform: rotate(45deg);
+}
+
+.selModal .selModalInner .selModalList {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.selModal .selModalInner ul {
+  box-sizing: border-box;
+  padding: 0;
+  padding-bottom: 1px;
+  margin: 0;
+  color: #333;
+  background-color: #fff;
+}
+
+.selModal .selModalInner ul li {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 25px 10px 15px;
+  margin: 0 0 -1px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.selModal .selModalInner ul li img {
+  max-width: 40px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.selModal .selModalInner ul li.selected {
+  background-color: #ddd;
+}
+
+.selModal .selModalInner ul li.selected::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 4px;
+  height: 100%;
+  content: "";
+  background-color: #383838;
+}
+
+.selModal .selModalInner ul li::after {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  content: "";
+  border-top: 1px solid #888;
+  border-right: 1px solid #888;
+  transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.selModalButton {
+  position: relative;
+  display: inline-block;
+  width: 170px;
+  padding: 15px 9px 15px 12px;
+  overflow: hidden;
+  font-size: inherit;
+  line-height: normal;
+  color: #333;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #777;
+  border-radius: 3px;
+}
+
+.selModalButton::before,
+.selModalButton::after {
+  position: absolute;
+  right: 7px;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  content: "";
+  border: 4px dashed;
+  border-color: #333 transparent;
+}
+
+.selModalButton::before {
+  top: 30%;
+  border-top: none;
+  border-bottom-style: solid;
+}
+
+.selModalButton::after {
+  bottom: 30%;
+  border-top-style: solid;
+  border-bottom: none;
+}
+
+.selModal .selModalInner ul li.totch {
+  background-color: #efefef;
+}
