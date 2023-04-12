@@ -1,0 +1,40 @@
+{
+  "name": "git_majang_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack",
+    "watch-build": "npx webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iguchi-Masato-toko/majang_App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iguchi-Masato-toko/majang_App/issues"
+  },
+  "homepage": "https://github.com/Iguchi-Masato-toko/majang_App#readme",
+  "dependencies": {
+    "webpack-fix-style-only-entries": "^0.6.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "cssnano-preset-advanced": "^6.0.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss": "^8.4.21",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "stylelint": "^15.4.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "stylelint-order": "^6.0.3",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
