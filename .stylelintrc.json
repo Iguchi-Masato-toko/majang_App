@@ -9,6 +9,7 @@
     "declaration-block-semicolon-newline-after": "always-multi-line",
     "declaration-block-semicolon-newline-before": "never-multi-line",
     "order/properties-order": [
+      "content",
       "position",
       "z-index",
       "top",
@@ -204,7 +205,6 @@
       "hyphens",
       "pointer-events",
 
-      "content",
       "quotes",
       "counter-reset",
       "counter-increment",

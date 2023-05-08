@@ -75,13 +75,13 @@ time,
 mark,
 audio,
 video {
-  padding: 0;
   margin: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
+  padding: 0;
   border: 0;
   outline: 0;
+  background: transparent;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 body {
@@ -115,31 +115,30 @@ blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-  content: "";
   content: none;
 }
 
 a {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  background: transparent;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
 }
 
 /* change colours to suit your needs */
 ins {
+  background-color: #ff9;
   color: #000;
   text-decoration: none;
-  background-color: #ff9;
 }
 
 /* change colours to suit your needs */
 mark {
-  font-style: italic;
-  font-weight: bold;
-  color: #000;
   background-color: #ff9;
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
 }
 
 del {
@@ -148,8 +147,8 @@ del {
 
 abbr[title],
 dfn[title] {
-  cursor: help;
   border-bottom: 1px dotted;
+  cursor: help;
 }
 
 table {
@@ -161,8 +160,8 @@ table {
 hr {
   display: block;
   height: 1px;
-  padding: 0;
   margin: 1em 0;
+  padding: 0;
   border: 0;
   border-top: 1px solid #ccc;
 }

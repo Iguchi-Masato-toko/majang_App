@@ -1,406 +1,379 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/selmodal.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/selmodal.css" />
     <script src="./js/jquery.js"></script>
     <title>麻雀点数計算問題集</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrp">
-        <!-- <header></header> -->
-        <main class="ly_main">
-            <section class="ly_block1">
-                <h1 class="bl_h1">点数計算・符問題集</h1>
-                <section class="ly_block2">
-                    <h2 class="bl_h2">計算　問題</h2>
-                    <ul class="terms_list">
-                        <li class="item" id="">東場</li>
-                        <li class="item" id="">東家</li>
-                        <li class="item" id="">親</li>
-                    </ul>
-                    <div class="ly_form_area">
-                        <div class="ly_question">
-                            <div class="terms-dora reach">
-                                <span>リーチ</span>
-                                <div><img src="./img/another/reatch.gif" alt=""></div>
-                                <!-- <span>なし</span> -->
-                            </div>
-                            <div id="omoteDora" class="terms-dora -border">
-                                <span>表ドラ</span>
-                                <div><img src="./img/majang_pai/ms1.gif" alt=""></div>
-                            </div>
-                            <div id="uraDora" class="terms-dora -border">
-                                <span>裏ドラ</span>
-                                <div><img src="./img/majang_pai/ms1.gif" alt=""></div>
-                            </div>
-                            <div id="Agari" class="terms-dora -border">
-                                <span>ロン</span>
-                                <div><img src="./img/majang_pai/ms1.gif" alt=""></div>
-                            </div>
-                            <div class="ly_image_area flex">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                            </div>
-                            <div class="ly_naki_area flex">
-                                <img src="./img/majang_pai_naki/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                                <img src="./img/majang_pai/ms1.gif" alt="">
-                            </div>
-                        </div>
-                        <div class="ly_answer_area flex -flex_end -alicenter">
-                            <label class="select_box">
-                                <select name="test">
-                                    <option value="">500</option>
-                                    <option value="">1000</option>
-                                    <option value="">1500</option>
-                                    <option value="">2000</option>
-                                    <option value="">2600</option>
-                                    <option value="">4000</option>
-                                    <option value="">6000</option>
-                                </select>
-                            </label>
-                            <button class="btn -orange">解答する</button>
-                        </div>
-                    </div><!-- ly_form_area -->
-                </section>
-                <div><a id="modal_open" href="javascript:void(0)" class="btn-modal" data-modal="child-modal">点数表を見る</a></div>
-                <!-- <div><a id="modal_open" href="javascript:void(0)" class="btn-modal" data-modal="parents-modal">点数表を見る</a></div> -->
-                <!-- <div><a id="modal_open" href="javascript:void(0)" class="btn-modal" data-modal="fu-modal">点数表を見る</a></div> -->
-                <div style="margin-top: 15px;">画像（麻雀牌）参照元　(c)<a href="http://izumick.tumblr.com/">izumick</a>　supported by <a href="http://mj-king.net/">麻雀王国</a> <a href="http://mj-king.net/tempos">雀荘検索</a></div>
-            </section><!-- ly_block1 -->
-        </main>
-        <!-- <footer></footer> -->
+      <!-- <header></header> -->
+      <main class="ly_main">
+        <section class="ly_block1">
+          <h1 class="bl_h1">点数計算・符問題集</h1>
+          <section class="ly_block2">
+            <h2 class="bl_h2">計算　問題</h2>
+            <ul class="terms_list">
+              <li class="item" id="terms1"></li>
+              <li class="item" id="terms2"></li>
+              <li class="item" id="terms3"></li>
+            </ul>
+            <div class="ly_form_area">
+              <div class="ly_question">
+                <div id="reach" class="terms-dora reach">
+                  <span>リーチ</span>
+                  <div><img src="./img/another/reatch.gif" alt="" /></div>
+                  <!-- <span>なし</span> -->
+                </div>
+                <div id="omoteDora" class="terms-dora -border">
+                  <span>表ドラ</span>
+                  <div><img src="./img/majang_pai/ms1.gif" alt="" /></div>
+                </div>
+                <div id="uraDora" class="terms-dora -border">
+                  <span>裏ドラ</span>
+                  <div><img src="./img/majang_pai/ms1.gif" alt="" /></div>
+                </div>
+                <div id="Agari" class="terms-dora -border">
+                  <span>ロン</span>
+                  <div><img src="./img/majang_pai/ms1.gif" alt="" /></div>
+                </div>
+                <div id="haipai" class="ly_image_area flex"></div>
+                <div id="naki" class="ly_naki_area flex">
+                  <ul class="naki_area_list flex" class="flex"></ul>
+                </div>
+              </div>
+              <div class="ly_answer_area flex -flex_end -alicenter">
+                <label class="select_box">
+                  <select id="score" name="test"></select>
+                </label>
+                <button id="answerBtn" class="btn -orange">解答する</button>
+                <button id="nextBtn" class="btn -blue" style="display: none;">次へ</button>
+              </div>
+              <div id="correctArea" class="flex -alicenter -justycenter -mt25">
+                <p id="correct_word" style="display: none;">正解</p>
+                <p id="incorrect_word" style="display: none;">不正解</p>
+                <div id="correct" class="circle" style="display: none;">
+                  <div class="aa"></div>
+                  <div class="bb"></div>
+                </div>
+                <div id="inrrect" class="circle" style="display: none;">
+                  <div class="aa"></div>
+                  <div class="bb"></div>
+                </div>
+              </div>
+              <div id="yaku" class="" style="display: none;">
+                <ul class="yakuList"></ul>
+              </div>
+            </div>
+            <!-- ly_form_area -->
+          </section>
+          <div id="childM" style="display: none;"><a href="javascript:void(0)" class="btn-modal" data-modal="child-modal">点数表を見る</a></div>
+          <div id="parentsM" style="display: none;"><a href="javascript:void(0)" class="btn-modal" data-modal="parents-modal">点数表を見る</a></div>
+          <!-- <div><a id="modal_open" href="javascript:void(0)" class="btn-modal" data-modal="fu-modal">点数表を見る</a></div> -->
+          <div style="margin-top: 15px">画像（麻雀牌）参照元　(c)<a href="http://izumick.tumblr.com/">izumick</a>　supported by <a href="http://mj-king.net/">麻雀王国</a>
+            <a href="http://mj-king.net/tempos">雀荘検索</a>
+          </div>
+        </section>
+        <!-- ly_block1 -->
+      </main>
+      <!-- <footer></footer> -->
     </div>
     <div id="modal_outer" class="modal_outer">
-        <div class="modal">
-            <div class="modal_inner">
-                <div id="child_table" class="modal_contents">
-                    <p id="scroll_words">右にスクロールできます</p>
-                    <table id="child_table" class="table">
-                        <thead>
-                            <tr>
-                                <th>&nbsp;</th>
-                                <th>1翻</th>
-                                <th>2翻</th>
-                                <th>3翻</th>
-                                <th>4翻</th>
-                                <th>5翻</th>
-                                <th>6翻～7翻</th>
-                                <th>8翻～10翻</th>
-                                <th>11翻～12翻</th>
-                                <th>13翻～</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>20符</th>
-                                <td>&nbsp;</td>
-                                <td>1,300<br>(400,700)</td>
-                                <td>2600<br>(700,1300)</td>
-                                <td>5200<br>(1300,2600)</td>
-                                <td rowspan="7">8,000(2000,4000)</td>
-                                <td rowspan="7">12,000(3000,6000)</td>
-                                <td rowspan="7">16,000(4000,8000)</td>
-                                <td rowspan="7">24,000(6000,12000)</td>
-                                <td rowspan="7">32,000(8000,16000)</td>
-                            </tr>
-                            <tr>
-                                <th>25符</th>
-                                <td>&nbsp;</td>
-                                <td>1,600<br>(400,800)</td>
-                                <td>3,200<br>(800,1600)</td>
-                                <td>6,400<br>(1600,3200)</td>
-                            </tr>
-                            <tr>
-                                <th>30符</th>
-                                <td>1,000<br>(300,500)</td>
-                                <td>2,000<br>(500,1000)</td>
-                                <td>3,900<br>(1000,2000)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                            </tr>
-                            <tr>
-                                <th>40符</th>
-                                <td>1,300<br>(400,700)</td>
-                                <td>2,600<br>(700,1300)</td>
-                                <td>5,200<br>(1300,2600)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                            </tr>
-                            <tr>
-                                <th>50符</th>
-                                <td>1,600<br>(400,800)</td>
-                                <td>3,200<br>(800,1600)</td>
-                                <td>6,400<br>(1600,3200)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                            </tr>
-                            <tr>
-                                <th>60符</th>
-                                <td>2,000<br>(500,1000)</td>
-                                <td>3,900<br>(1000,200)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                            </tr>
-                            <tr>
-                                <th>70符</th>
-                                <td>2,300<br>(600,1200)</td>
-                                <td>4,500<br>(1200,2300)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                                <td>8,000<br>(2000,4000)</td>
-                            </tr>
-                        </tbody>
-                    </table><!-- #child_table -->
-                    <table id="parents_table" class="table">
-                        <thead>
-                            <tr>
-                                <th>&nbsp;</th>
-                                <th>1翻</th>
-                                <th>2翻</th>
-                                <th>3翻</th>
-                                <th>4翻</th>
-                                <th>5翻</th>
-                                <th>6翻～7翻</th>
-                                <th>8翻～10翻</th>
-                                <th>11翻～12翻</th>
-                                <th>13翻～</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>20符</th>
-                                <td>&nbsp;</td>
-                                <td>2,000<br>(700)</td>
-                                <td>3,900<br>(1300)</td>
-                                <td>7,700<br>(2600)</td>
-                                <td rowspan="7">12,000(4000)</td>
-                                <td rowspan="7">18,000(6000)</td>
-                                <td rowspan="7">24,000(8000)</td>
-                                <td rowspan="7">36,000(12000)</td>
-                                <td rowspan="7">48,000(16000)</td>
-                            </tr>
-                            <tr>
-                                <th>25符</th>
-                                <td>&nbsp;</td>
-                                <td>2,400<br>(800)</td>
-                                <td>4,800<br>(1600)</td>
-                                <td>9,600<br>(3200)</td>
-                            </tr>
-                            <tr>
-                                <th>30符</th>
-                                <td>1,500<br>(500)</td>
-                                <td>2,900<br>(1000)</td>
-                                <td>5,800<br>(2000)</td>
-                                <td>8,000<br>(4000)</td>
-                            </tr>
-                            <tr>
-                                <th>40符</th>
-                                <td>2,000<br>(700)</td>
-                                <td>3,900<br>(1300)</td>
-                                <td>7,700<br>(2600)</td>
-                                <td>12,000<br>(4000)</td>
-                            </tr>
-                            <tr>
-                                <th>50符</th>
-                                <td>2,400<br>(800)</td>
-                                <td>4,800<br>(1600)</td>
-                                <td>9,600<br>(3200)</td>
-                                <td>12,000<br>(4000)</td>
-                            </tr>
-                            <tr>
-                                <th>60符</th>
-                                <td>2,900<br>(1000)</td>
-                                <td>5,800<br>(2000)</td>
-                                <td>12,000<br>(4000)</td>
-                                <td>12,000<br>(4000)</td>
-                            </tr>
-                            <tr>
-                                <th>70符</th>
-                                <td>3,400<br>(1200)</td>
-                                <td>6,800<br>(2300)</td>
-                                <td>12,000<br>(4000)</td>
-                                <td>12,000<br>(4000)</td>
-                            </tr>
-                        </tbody>
-                    </table><!-- #parents_table -->
-                    <div id="fu_table" class="fu_table">
-                        <section>
-                            <h3 class="machi">待ちの符</h3>
-                        <ul class="fu_list">
-                            <li class="item flex">
-                                <p>両面待ち<br>0符</p>
-                                <div class="image">
-                                    <img src="./img/majang_pai/ps2.gif" alt="">
-                                    <img src="./img/majang_pai/ps3.gif" alt="">
-                                </div>
-                            </li>
-                            <li class="item flex">
-                                <p>カンチャン待ち<br>2符</p>
-                                <div class="image">
-                                    <img src="./img/majang_pai/ps1.gif" alt="">
-                                    <img src="./img/majang_pai/ps3.gif" alt="">
-                                </div>
-                            </li>
-                            <li class="item flex">
-                                <p>ペンチャン待ち<br>2符</p>
-                                <div class="imgage">
-                                    <img src="./img/majang_pai/ps1.gif" alt="">
-                                    <img src="./img/majang_pai/ps2.gif" alt="">
-                                </div>
-                            </li>
-                            <li class="item flex">
-                                <p>シャンポン待ち<br>シャボ待ち<br>0符</p>
-                                <div class="image">
-                                    <img src="./img/majang_pai/ps1.gif" alt="">
-                                    <img src="./img/majang_pai/ps1.gif" alt="">
-                                    <img src="./img/majang_pai/ps2.gif" alt="">
-                                    <img src="./img/majang_pai/ps2.gif" alt="">
-                                </div>
-                            </li>
-                            <li class="item flex">
-                                <p>単騎待ち<br>2符</p>
-                                <div class="image">
-                                    <img src="./img/majang_pai/ps1.gif" alt="">
-                                </div>
-                            </li>
-                            <li class="item flex">
-                                <p>ノベタン待ち<br>2符</p>
-                                <div class="image">
-                                    <img src="./img/majang_pai/ps1.gif" alt="">
-                                    <img src="./img/majang_pai/ps2.gif" alt="">
-                                    <img src="./img/majang_pai/ps3.gif" alt="">
-                                    <img src="./img/majang_pai/ps4.gif" alt="">
-                                </div>
-                            </li>
-                        </ul>
-                        </section>
-                        <section>
-                            <h3>雀頭の符</h3>
-                            <ul class="fu_list">
-                                <li class="item flex">
-                                    <p>役牌以外<br>0符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>役牌<br>2符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                    </div>
-                                </li>
-                            </ul>
-                        </section>
-                        <section>
-                            <h3>メンツの符</h3>
-                            <ul class="fu_list">
-                                <li class="item flex">
-                                    <p>シュンツ<br>0符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai/ps2.gif" alt="">
-                                        <img src="./img/majang_pai/ps3.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>明刻(中張牌)<br>2符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai_naki/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>明刻(一九字牌)<br>4符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai_naki/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>暗刻(中張牌)<br>4符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>暗刻(一九字牌)<br>4符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>明槓(中張牌)<br>8符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai_naki/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                        <img src="./img/majang_pai/ps4.gif" alt="">
-                                    </div>
-                                </li>
-                                <li class="item flex">
-                                    <p>明槓(一九字牌)<br>16符</p>
-                                    <div class="image">
-                                        <img src="./img/majang_pai_naki/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                        <img src="./img/majang_pai/hatsu.gif" alt="">
-                                    </div>
-                                </li>
-                            </ul>
-                        </section>
+      <div class="modal">
+        <div class="modal_inner">
+          <div id="child_table" class="modal_contents">
+            <p id="scroll_words">右にスクロールできます</p>
+            <table id="child_table" class="table">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>1翻</th>
+                  <th>2翻</th>
+                  <th>3翻</th>
+                  <th>4翻</th>
+                  <th>5翻</th>
+                  <th>6翻～7翻</th>
+                  <th>8翻～10翻</th>
+                  <th>11翻～12翻</th>
+                  <th>13翻～</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>20符</th>
+                  <td>&nbsp;</td>
+                  <td>1,300<br />(400,700)</td>
+                  <td>2600<br />(700,1300)</td>
+                  <td>5200<br />(1300,2600)</td>
+                  <td rowspan="7">8,000(2000,4000)</td>
+                  <td rowspan="7">12,000(3000,6000)</td>
+                  <td rowspan="7">16,000(4000,8000)</td>
+                  <td rowspan="7">24,000(6000,12000)</td>
+                  <td rowspan="7">32,000(8000,16000)</td>
+                </tr>
+                <tr>
+                  <th>25符</th>
+                  <td>&nbsp;</td>
+                  <td>1,600<br />(400,800)</td>
+                  <td>3,200<br />(800,1600)</td>
+                  <td>6,400<br />(1600,3200)</td>
+                </tr>
+                <tr>
+                  <th>30符</th>
+                  <td>1,000<br />(300,500)</td>
+                  <td>2,000<br />(500,1000)</td>
+                  <td>3,900<br />(1000,2000)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                </tr>
+                <tr>
+                  <th>40符</th>
+                  <td>1,300<br />(400,700)</td>
+                  <td>2,600<br />(700,1300)</td>
+                  <td>5,200<br />(1300,2600)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                </tr>
+                <tr>
+                  <th>50符</th>
+                  <td>1,600<br />(400,800)</td>
+                  <td>3,200<br />(800,1600)</td>
+                  <td>6,400<br />(1600,3200)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                </tr>
+                <tr>
+                  <th>60符</th>
+                  <td>2,000<br />(500,1000)</td>
+                  <td>3,900<br />(1000,200)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                </tr>
+                <tr>
+                  <th>70符</th>
+                  <td>2,300<br />(600,1200)</td>
+                  <td>4,500<br />(1200,2300)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                  <td>8,000<br />(2000,4000)</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- #child_table -->
+            <table id="parents_table" class="table">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>1翻</th>
+                  <th>2翻</th>
+                  <th>3翻</th>
+                  <th>4翻</th>
+                  <th>5翻</th>
+                  <th>6翻～7翻</th>
+                  <th>8翻～10翻</th>
+                  <th>11翻～12翻</th>
+                  <th>13翻～</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>20符</th>
+                  <td>&nbsp;</td>
+                  <td>2,000<br />(700)</td>
+                  <td>3,900<br />(1300)</td>
+                  <td>7,700<br />(2600)</td>
+                  <td rowspan="7">12,000(4000)</td>
+                  <td rowspan="7">18,000(6000)</td>
+                  <td rowspan="7">24,000(8000)</td>
+                  <td rowspan="7">36,000(12000)</td>
+                  <td rowspan="7">48,000(16000)</td>
+                </tr>
+                <tr>
+                  <th>25符</th>
+                  <td>&nbsp;</td>
+                  <td>2,400<br />(800)</td>
+                  <td>4,800<br />(1600)</td>
+                  <td>9,600<br />(3200)</td>
+                </tr>
+                <tr>
+                  <th>30符</th>
+                  <td>1,500<br />(500)</td>
+                  <td>2,900<br />(1000)</td>
+                  <td>5,800<br />(2000)</td>
+                  <td>8,000<br />(4000)</td>
+                </tr>
+                <tr>
+                  <th>40符</th>
+                  <td>2,000<br />(700)</td>
+                  <td>3,900<br />(1300)</td>
+                  <td>7,700<br />(2600)</td>
+                  <td>12,000<br />(4000)</td>
+                </tr>
+                <tr>
+                  <th>50符</th>
+                  <td>2,400<br />(800)</td>
+                  <td>4,800<br />(1600)</td>
+                  <td>9,600<br />(3200)</td>
+                  <td>12,000<br />(4000)</td>
+                </tr>
+                <tr>
+                  <th>60符</th>
+                  <td>2,900<br />(1000)</td>
+                  <td>5,800<br />(2000)</td>
+                  <td>12,000<br />(4000)</td>
+                  <td>12,000<br />(4000)</td>
+                </tr>
+                <tr>
+                  <th>70符</th>
+                  <td>3,400<br />(1200)</td>
+                  <td>6,800<br />(2300)</td>
+                  <td>12,000<br />(4000)</td>
+                  <td>12,000<br />(4000)</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- #parents_table -->
+            <div id="fu_table" class="fu_table">
+              <section>
+                <h3 class="machi">待ちの符</h3>
+                <ul class="fu_list">
+                  <li class="item flex">
+                    <p>両面待ち<br />0符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps2.gif" alt="" />
+                      <img src="./img/majang_pai/ps3.gif" alt="" />
                     </div>
-                </div>
+                  </li>
+                  <li class="item flex">
+                    <p>カンチャン待ち<br />2符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps1.gif" alt="" />
+                      <img src="./img/majang_pai/ps3.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>ペンチャン待ち<br />2符</p>
+                    <div class="imgage">
+                      <img src="./img/majang_pai/ps1.gif" alt="" />
+                      <img src="./img/majang_pai/ps2.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>シャンポン待ち<br />シャボ待ち<br />0符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps1.gif" alt="" />
+                      <img src="./img/majang_pai/ps1.gif" alt="" />
+                      <img src="./img/majang_pai/ps2.gif" alt="" />
+                      <img src="./img/majang_pai/ps2.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>単騎待ち<br />2符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps1.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>ノベタン待ち<br />2符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps1.gif" alt="" />
+                      <img src="./img/majang_pai/ps2.gif" alt="" />
+                      <img src="./img/majang_pai/ps3.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                    </div>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h3>雀頭の符</h3>
+                <ul class="fu_list">
+                  <li class="item flex">
+                    <p>役牌以外<br />0符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>役牌<br />2符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                    </div>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h3>メンツの符</h3>
+                <ul class="fu_list">
+                  <li class="item flex">
+                    <p>シュンツ<br />0符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps2.gif" alt="" />
+                      <img src="./img/majang_pai/ps3.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>明刻(中張牌)<br />2符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai_naki/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>明刻(一九字牌)<br />4符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai_naki/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>暗刻(中張牌)<br />4符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>暗刻(一九字牌)<br />4符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>明槓(中張牌)<br />8符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai_naki/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                      <img src="./img/majang_pai/ps4.gif" alt="" />
+                    </div>
+                  </li>
+                  <li class="item flex">
+                    <p>明槓(一九字牌)<br />16符</p>
+                    <div class="image">
+                      <img src="./img/majang_pai_naki/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                      <img src="./img/majang_pai/hatsu.gif" alt="" />
+                    </div>
+                  </li>
+                </ul>
+              </section>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <a id="modal_close" class="close_btn" href="javascript:void(0)"></a>
-</body>
-<script src="./js/index.js"></script>
-<script></script>
-<script src="./js/Jquery.selmodal.js"></script>
-<script>
-    $(function(){
-	$('select').selModal();
-    var modalId = '';
-    $('#modal_open').on('click',() =>{
-        var modalData = $('#modal_open').data('modal');
-        switch (modalData) {
-            case 'child-modal':
-                modalId = '#child_table';
-            break;
-            case 'parents-modal':
-                modalId = '#parents_table';
-            break;
-            case 'fu-modal':
-                modalId = '#fu_table'
-            default:
-            break;
-        }
-        $(modalId + ',#modal_outer').addClass('is-show');
-    });
-    $('#modal_outer,#modal_close').on('click',()=>{
-        $(modalId +',#modal_outer').removeClass('is-show');
-        modalId= '';
-    });
-}); 
-</script>
+  </body>
+  <script src="./js/Jquery.selmodal.js"></script>
+  <script src="./js/index.js"></script>
 </html>

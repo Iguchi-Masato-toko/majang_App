@@ -1,7 +1,8 @@
-/*!**********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./sass/style.scss ***!
-  \**********************************************************************************************************/
-@charset "UTF-8";
+// フォントサイズ関数
+@function fontrem($px) {
+  @return (calc($px / 16)) * 1rem;
+}
+
 /* 円を描くアニメーション */
 @keyframes circling {
   0% {
@@ -11,6 +12,7 @@
     transform: rotate(180deg);
   }
 }
+
 body {
   position: relative;
   color: #222;
@@ -27,18 +29,22 @@ ul {
 
 .flex {
   display: flex;
-}
-.flex.-alicenter {
-  align-items: center;
-}
-.flex.-culumn {
-  flex-direction: column;
-}
-.flex.-flex_end {
-  justify-content: flex-end;
-}
-.flex.-justycenter {
-  justify-content: center;
+
+  &.-alicenter {
+    align-items: center;
+  }
+
+  &.-culumn {
+    flex-direction: column;
+  }
+
+  &.-flex_end {
+    justify-content: flex-end;
+  }
+
+  &.-justycenter {
+    justify-content: center;
+  }
 }
 
 .-mt25 {
@@ -47,21 +53,21 @@ ul {
 
 .btn {
   border-bottom: 5px solid #b84c00;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-}
-.btn.-orange {
-  background-color: #eb6100;
-  color: #fff;
-}
-.btn.-blue {
-  background-color: #6de3ee;
-  color: #fff;
-}
-.btn:hover {
-  margin-top: 3px;
-  border-bottom: 2px solid #b84c00;
-  background: #f56500;
-  color: #fff;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 30%);
+  &.-orange {
+    background-color: #eb6100;
+    color: #fff;
+  }
+  &.-blue {
+    background-color: #6de3ee;
+    color: #fff;
+  }
+  &:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #b84c00;
+    background: #f56500;
+    color: #fff;
+  }
 }
 
 .wrp {
@@ -75,23 +81,25 @@ ul {
 
 .ly_block1 {
   margin-top: 25px;
-}
-.ly_block1 .bl_h1 {
-  font-size: 1.875rem;
-  text-align: center;
+
+  & .bl_h1 {
+    font-size: fontrem(30);
+    text-align: center;
+  }
 }
 
 .ly_block2 {
   margin-top: 30px;
   padding-top: 20px;
   border-top: 2px solid #222;
-}
-.ly_block2 .bl_h2 {
-  font-size: 1.5625rem;
-  text-align: center;
-}
-.ly_block2 .ly_form_area {
-  margin-top: 30px;
+
+  & .bl_h2 {
+    font-size: fontrem(25);
+    text-align: center;
+  }
+  & .ly_form_area {
+    margin-top: 30px;
+  }
 }
 
 .ly_question {
@@ -103,63 +111,72 @@ ul {
   display: flex;
   justify-content: center;
   margin-top: 25px;
-  font-size: 1.25rem;
-}
-.terms_list .item {
-  width: 20%;
-  text-align: center;
+  font-size: fontrem(20);
+
+  & .item {
+    width: calc(100% / 5);
+    text-align: center;
+  }
 }
 
 .terms-dora {
   display: inline-flex;
   align-items: center;
-}
-.terms-dora.-border {
-  border: 3px solid #fff;
-}
-.terms-dora.reach img {
-  width: 50%;
-}
-.terms-dora.ly_image_area {
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  margin-top: 25px;
-}
-.terms-dora span {
-  font-size: 0.875rem;
-  color: #fff;
-}
-.terms-dora div {
-  margin-left: 15px;
-}
-.terms-dora div > img {
-  width: 27px;
+
+  &.-border {
+    border: 3px solid #fff;
+  }
+
+  &.reach img {
+    width: 50%;
+  }
+
+  &.ly_image_area {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  & span {
+    font-size: fontrem(14);
+    color: #fff;
+  }
+
+  & div {
+    margin-left: 15px;
+
+    & > img {
+      width: 27px;
+    }
+  }
 }
 
 .ly_image_area {
   align-items: center;
   justify-content: center;
   margin-top: 25px;
-}
-.ly_image_area img {
-  display: inline-block;
-  width: 7.1428571429%;
+
+  & img {
+    display: inline-block;
+    width: calc(100% / 14);
+  }
 }
 
 .ly_naki_area {
   justify-content: flex-end;
   margin-top: 15px;
-}
-.ly_naki_area .naki_area_list {
-  width: 25%;
+  & .naki_area_list {
+    width: calc(100% / 4);
+  }
 }
 
 .ly_answer_area {
   margin-top: 15px;
-}
-.ly_answer_area .btn {
-  padding: 15px 25px;
+
+  & .btn {
+    padding: 15px 25px;
+  }
 }
 
 .select_box {
@@ -196,11 +213,12 @@ ul {
   display: none;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0 0 0 / 60%);
   transition: display 0.5s ease;
-}
-.modal_outer.is-show {
-  display: block;
+
+  &.is-show {
+    display: block;
+  }
 }
 
 .modal {
@@ -212,17 +230,20 @@ ul {
   width: 100%;
   background: #fff;
   transform: translate(-50%, -50%);
-}
-.modal .modal_inner {
-  position: relative;
-  background: #fff;
-}
-.modal .modal_inner .modal_contents {
-  padding: 10px 15px;
-}
-.modal .modal_inner .modal_contents p {
-  font-size: 0.9375rem;
-  text-align: center;
+
+  & .modal_inner {
+    position: relative;
+    background: #fff;
+
+    & .modal_contents {
+      padding: 10px 15px;
+
+      & p {
+        font-size: fontrem(15);
+        text-align: center;
+      }
+    }
+  }
 }
 
 .close_btn {
@@ -233,22 +254,26 @@ ul {
   display: block;
   width: 30px;
   height: 30px;
-}
-.close_btn::before, .close_btn::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 3px;
-  height: 40px;
-  border-radius: 2.5px;
-  background: #fff;
-}
-.close_btn::before {
-  transform: translate(-50%, -50%) rotate(30deg);
-}
-.close_btn::after {
-  transform: translate(-50%, -50%) rotate(-30deg);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 40px;
+    border-radius: 2.5px;
+    background: #fff;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-30deg);
+  }
 }
 
 /* 計算表 */
@@ -256,16 +281,19 @@ ul {
   display: none;
   width: 100%;
   margin-top: 25px;
-  font-size: 0.75rem;
-}
-.table.is-show {
-  display: block;
-}
-.table th, .table td {
-  padding: 5px;
-  border: 1px solid #000;
-  text-align: center;
-  vertical-align: middle;
+  font-size: fontrem(12);
+
+  &.is-show {
+    display: block;
+  }
+
+  & th,
+  & td {
+    padding: 5px;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 
 /* 符 */
@@ -288,14 +316,14 @@ ul {
 }
 
 .fu_table h3 {
-  font-size: 0.75rem;
+  font-size: fontrem(12);
   text-align: center;
 }
 
 .fu_list {
   display: flex;
   flex-direction: column;
-  font-size: 0.5rem;
+  font-size: fontrem(8);
 }
 
 .fu_list .item {
@@ -322,11 +350,9 @@ ul {
   width: 50%;
   height: 100%;
 }
-
 .circle .aa {
   left: 50%;
 }
-
 .circle .aa::before,
 .circle .bb::before {
   content: "";
@@ -356,19 +382,21 @@ ul {
   width: 100%;
   margin-top: 15px;
   flex-wrap: wrap;
-}
-.yakuList .item {
-  position: relative;
-  width: 20%;
-  padding-left: 13px;
-  font-size: 1.0625rem;
-  flex-wrap: wrap;
-}
-.yakuList .item:nth-child(n+5) {
-  margin-top: 10px;
-}
-.yakuList .item::before {
-  content: "・";
-  position: absolute;
-  left: 0;
+  & .item {
+    position: relative;
+    width: calc(100% / 5);
+    padding-left: 13px;
+    font-size: fontrem(17);
+    flex-wrap: wrap;
+
+    &:nth-child(n + 5) {
+      margin-top: 10px;
+    }
+
+    &::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+    }
+  }
 }

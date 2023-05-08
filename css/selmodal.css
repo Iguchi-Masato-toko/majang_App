@@ -23,27 +23,27 @@ body.selModalBody {
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow-y: hidden;
   box-sizing: border-box;
   width: 95%;
   max-width: 600px;
   max-height: 95%;
-  overflow-y: hidden;
-  background: #fff;
   border-radius: 0 0 5px 5px;
+  background: #fff;
   transform: translate(-50%, -50%);
 }
 
 .selModal .selModalInner .selModalHeader {
   padding: 10px;
-  text-align: right;
-  background-color: #efefef;
   border-radius: 5px 5px 0 0;
+  background-color: #efefef;
+  text-align: right;
 }
 
 .selModal .selModalInner .selModalHeader::after {
+  content: "";
   display: block;
   clear: both;
-  content: "";
 }
 
 .selModalCloseIcon {
@@ -57,6 +57,7 @@ body.selModalBody {
 
 .selModalCloseIcon span::before,
 .selModalCloseIcon span::after {
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,7 +65,6 @@ body.selModalBody {
   width: 84%;
   height: 10%;
   margin: -8% 0 0 -42%;
-  content: "";
   background: #555;
 }
 
@@ -84,21 +84,21 @@ body.selModalBody {
 
 .selModal .selModalInner ul {
   box-sizing: border-box;
+  margin: 0;
   padding: 0;
   padding-bottom: 1px;
-  margin: 0;
-  color: #333;
   background-color: #fff;
+  color: #333;
 }
 
 .selModal .selModalInner ul li {
   position: relative;
-  box-sizing: border-box;
   display: block;
-  padding: 10px 25px 10px 15px;
+  box-sizing: border-box;
   margin: 0 0 -1px;
-  cursor: pointer;
+  padding: 10px 25px 10px 15px;
   border: 1px solid #ddd;
+  cursor: pointer;
 }
 
 .selModal .selModalInner ul li img {
@@ -113,17 +113,18 @@ body.selModalBody {
 }
 
 .selModal .selModalInner ul li.selected::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   width: 4px;
   height: 100%;
-  content: "";
   background-color: #383838;
 }
 
 .selModal .selModalInner ul li::after {
+  content: "";
   position: absolute;
   top: 50%;
   right: 15px;
@@ -131,41 +132,39 @@ body.selModalBody {
   width: 8px;
   height: 8px;
   margin-top: -4px;
-  content: "";
   border-top: 1px solid #888;
   border-right: 1px solid #888;
-  transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 .selModalButton {
   position: relative;
   display: inline-block;
+  overflow: hidden;
   width: 170px;
   padding: 15px 9px 15px 12px;
-  overflow: hidden;
+  border: 1px solid #777;
+  border-radius: 3px;
+  background: #fff;
   font-size: inherit;
   line-height: normal;
   color: #333;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
-  background: #fff;
-  border: 1px solid #777;
-  border-radius: 3px;
 }
 
 .selModalButton::before,
 .selModalButton::after {
+  content: "";
   position: absolute;
-  right: 7px;
   z-index: 2;
+  right: 7px;
   width: 0;
   height: 0;
-  pointer-events: none;
-  content: "";
   border: 4px dashed;
   border-color: #333 transparent;
+  pointer-events: none;
 }
 
 .selModalButton::before {
